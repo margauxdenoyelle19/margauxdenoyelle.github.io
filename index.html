@@ -268,6 +268,65 @@
 
   a.link{color:var(--accent);text-decoration:none;font-weight:600}
 </style>
+  @media (max-width:800px) {
+/* Ajuste le body et html pour supprimer le centrage vertical */
+html, body {
+height: auto;
+display: block;
+padding: 12px;
+}
+
+/* Ajuste la boîte principale .book */
+.book {
+width: 100%;
+max-width: 100%;
+min-height: auto;
+border-radius: 8px;
+padding: 0;
+}
+
+/* Header plus compact */
+header {
+padding: 12px 16px;
+flex-direction: column;
+align-items: flex-start;
+gap: 8px;
+}
+.title h1 { font-size: 22px; }
+p.subtitle { font-size: 12px; }
+
+/* Conteneur des pages */
+.container {
+padding: 12px;
+min-height: auto;
+}
+
+/* Colonnes */
+.col-left { display: none; }
+.col-right {
+width: 100%;
+padding: 8px 12px;
+}
+
+/* Pages en flux normal */
+.page {
+position: relative;
+inset: auto;
+}
+
+/* Footer */
+footer.actions {
+padding: 12px 16px;
+flex-direction: column;
+align-items: flex-start;
+gap: 8px;
+}
+.cta, .muted-btn {
+width: 100%;
+text-align: center;
+}
+}
+
 </head>
 <body>
 <div aria-label="CV interactif de Margaux Denoyelle" class="book" role="main">
