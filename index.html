@@ -277,6 +277,43 @@
   }
 
   a.link{color:var(--accent);text-decoration:none;font-weight:600}
+  /* --- Forcer affichage des deux colonnes sur petits écrans --- */
+@media (max-width:800px){
+  /* pages souvent positionnées absolute : sur mobile on les remet en flux normal */
+  .pages .page {
+    position:relative !important;
+    inset: auto !important;
+    display:flex !important;
+    flex-direction:column !important;
+    gap:12px;
+    opacity:1 !important;
+    pointer-events:auto !important;
+    transform:none !important;
+  }
+
+  /* Afficher la colonne gauche (empilée au-dessus) */
+  .col-left{
+    display:block !important;
+    width:100% !important;
+    padding:12px !important;
+    border-right:none !important;
+    box-sizing:border-box;
+  }
+
+  .col-right{
+    display:block !important;
+    width:100% !important;
+    padding:8px 12px !important;
+    box-sizing:border-box;
+  }
+
+  /* Assurer que le conteneur général n’a pas d’overflow qui coupe le contenu */
+  .book, .container, .pages {
+    overflow:visible !important;
+    min-height: auto !important;
+  }
+}
+
 </style>
 </head>
 <body>
