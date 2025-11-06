@@ -281,16 +281,23 @@
 @media (max-width:800px){
   /* pages souvent positionnées absolute : sur mobile on les remet en flux normal */
   .pages .page {
+     display:block;
+  }
+
+  .page {
     position:relative !important;
     inset: auto !important;
-    display:flex !important;
+    display: none !important;
     flex-direction:column !important;
-    gap:12px;
     opacity:1 !important;
     pointer-events:auto !important;
     transform:none !important;
+    box-shadow:none !important;
   }
-
+ /* Afficher seulement la page active */
+  .page.show {
+    display:block !important;
+  }
   /* Afficher la colonne gauche (empilée au-dessus) */
   .col-left{
     display:block !important;
